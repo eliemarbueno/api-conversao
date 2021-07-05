@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-conversao
+spec:
+  replicas: 30
+  selector:
+    matchLabels:
+      app: api-conversao
+  template:
+    metadata:
+      labels:
+        app: api-conversao
+    spec:
+      containers:
+        - name: api-conversao
+          image: eliemarbueno/api-conversao:v2
+          ports:
+            - containerPort: 30000
+            
+
+
